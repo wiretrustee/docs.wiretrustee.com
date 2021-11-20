@@ -39,7 +39,7 @@ It keeps the network state, authenticates and distributes network changes to pee
 The Management Service's responsibilities include:
 
 * **Registering and authenticating new peers.**  Every new machine has to register itself in the network in order to connect to other machines. 
-    After installation, Wiretrustee client requires login that can be done through Identity Provider (IDP) or a setup key.
+    After installation, Wiretrustee client requires login that can be done through Identity Provider (IDP) or with a setup key.
 * **Keeping the network map.** The Management service stores information about all the registered peers including Wireguard public key that was sent during the registration process.    
 * **Managing private IP addresses.** Each peer receives a unique private IP with which it can be identified in the network. 
   We use [Carrier Grade NAT](https://en.wikipedia.org/wiki/Carrier-grade_NAT) address space with an allocated address block <em>100.64.0.0/10</em>.
@@ -52,6 +52,10 @@ The Management Service's responsibilities include:
 
 The Management service runs in the cloud Wiretrustee-managed. It can also be self-hosted.
 
-### Client
+<p align="center">
+    <img src="/img/architecture/management.png" alt="management-dia"/>
+</p>
+
+### Client Application
 
 The Wiretrustee Client application (or agent) is a software that is installed on your machines and devices. 
