@@ -23,9 +23,9 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/'
+          routeBasePath: '/',
           // Please change this to your repo.
-         // editUrl: 'https://github.com/wiretrustee/wiretrustee-docs/edit/main/docs/',
+          editUrl: 'https://github.com/wiretrustee/docs.wiretrustee.com/edit/main/',
         },
         blog: {
           showReadingTime: true,
@@ -44,7 +44,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'wiretrustee',
+        title: '',
         logo: {
           alt: 'Wiretrustee Logo',
           src: 'img/logo.svg',
@@ -54,8 +54,8 @@ const config = {
           {
             type: 'doc',
             docId: 'introduction',
-            position: 'left',
-            label: 'Docs',
+            position: 'right',
+            label: 'Documentation',
           },
           {
             href: 'https://github.com/wiretrustee/wiretrustee',

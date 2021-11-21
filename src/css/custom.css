@@ -4,6 +4,8 @@
  * work well for content-centric websites.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #3578e5;
@@ -13,6 +15,7 @@
   --ifm-color-primary-light: #4e89e8;
   --ifm-color-primary-lighter: #5a91ea;
   --ifm-color-primary-lightest: #80aaef;
+  --ifm-font-family-base: 'Poppins';
 }
 
 .docusaurus-highlight-code-line {
