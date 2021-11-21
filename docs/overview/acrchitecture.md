@@ -34,7 +34,7 @@ Let's now take a closer look at each of Wiretrustee's components.
 ### Management Service
 
 The Management service is the central coordination component for Wiretrustee with a UI dashboard.
-It keeps the network state, authenticates and distributes network changes to peers.
+It keeps the network state, public Wireguard keys of the peers, authenticates, and distributes network changes to peers.
 
 The Management Service's responsibilities include:
 
@@ -58,4 +58,20 @@ The Management service runs in the cloud Wiretrustee-managed. It can also be sel
 
 ### Client Application
 
-The Wiretrustee Client application (or agent) is a software that is installed on your machines and devices. 
+The Wiretrustee Client application (or agent) is a software that is installed on your machines. 
+It is an entry point to you private network that makes it possible for machines to communicate with each other.
+Once installed and registered, a machine becomes a peer in the network.
+
+The Client's roles are the following:
+
+* **Generating private and public Wireguard keys.** These keys are used for packet encryption between peers and for [Wireguard Cryptokey Routing](https://www.wireguard.com/#cryptokey-routing).
+  To accept the incoming connections, peers have to know each other, therefore, the generated public keys have to be pre-shared on the machines. The client application sends its public key to the Management service which then distributes it to the authorized peers.
+  The private key never leaves the machine, ensuring that only the machine that owns the key can decrypt traffic addressed to it.
+* **Handling peer registration and authentication.**  Each peer has to be authenticated and registered in the system. The client application requests a user to login with an Identity Provider (IDP) or provides a [setup key](/overview/setup-keys) so that the peer can be associated with the organization's account.
+* **Receiving network updates from the Management service.**
+  Each peer receives initial configuration and a list of peers with corresponding public keys and IP addresses so that it can establish a peer-to-peer connection.
+* **Establishing peer-to-peer Wireguard connection.** To establish a connection with a remote peer, the Client first discovers the most suitable connection candidate, or simply address (IP:port) that other peer can use to connect to it. 
+  Then sends it to the remote peer via Signal. This message is encrypted with the peer's private key and a public key of the remote peer.
+    The remote peer does the same and once the peers can reach each other, they establish an encrypted Wireguard tunnel.
+
+### Signal Service
