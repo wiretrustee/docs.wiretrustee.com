@@ -42,11 +42,11 @@
        id="path-effect57379"
        is_visible="true"
        lpeversion="1"
-       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       satellites_param="F,0,0,1,0,4.4979167,0,1 @ F,0,0,1,0,4.4979167,0,1 @ F,0,0,1,0,4.4979167,0,1 @ F,0,0,1,0,4.4979167,0,1"
        unit="px"
        method="auto"
        mode="F"
-       radius="14"
+       radius="17"
        chamfer_steps="1"
        flexible="false"
        use_knot_distance="true"
@@ -62,16 +62,16 @@
     <path
        style="fill:#ffe6d5;stroke:none;stroke-width:1.4928;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4955"
-       width="36.496414"
+       width="43"
        height="18.151592"
-       x="127.93157"
+       x="127.33945"
        y="2.9803145"
        inkscape:export-filename="/home/braginini/Documents/projects/my/wiretrustee/wiretrustee.com-nextjs/public/brand-assets/logo.png"
        inkscape:export-xdpi="100"
        inkscape:export-ydpi="100"
-       inkscape:path-effect="#path-effect57379"
-       d="m 127.93157,2.9803145 h 36.49642 V 21.131907 h -36.49642 z"
-       sodipodi:type="rect" />
+       d="m 131.83736,2.9803145 34.00417,0 a 4.4979167,4.4979167 45 0 1 4.49792,4.4979167 V 16.63399 a 4.4979167,4.4979167 135 0 1 -4.49792,4.497917 h -34.00417 a 4.4979167,4.4979167 45 0 1 -4.49791,-4.497917 l 0,-9.1557588 a 4.4979167,4.4979167 135 0 1 4.49791,-4.4979167 z"
+       sodipodi:type="rect"
+       inkscape:path-effect="#path-effect57379" />
     <rect
        style="fill:#4d4d4d;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.469682;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect846-7-1-6-3-3"
@@ -130,7 +130,8 @@
     <g
        aria-label="DOCS"
        id="text6626"
-       style="font-size:10.5833px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;stroke-width:0.264583"
+       transform="matrix(0.99998439,0,0,1,2.5940024,0.478083)">
       <path
          d="m 134.29345,8.1771893 q 1.17475,0 2.05316,0.4656652 0.87842,0.4656651 1.35467,1.3123291 0.48683,0.8360804 0.48683,1.9367434 0,1.09008 -0.48683,1.936744 -0.47625,0.846664 -1.36525,1.312329 -0.87841,0.465666 -2.04258,0.465666 h -2.7834 V 8.1771893 Z m -0.11641,5.8631477 q 1.02658,0 1.59808,-0.560915 0.57149,-0.560914 0.57149,-1.587495 0,-1.02658 -0.57149,-1.598078 -0.5715,-0.571498 -1.59808,-0.571498 h -0.85725 v 4.317986 z"
          style="font-weight:bold;-inkscape-font-specification:'Poppins Bold';fill:#fb923c"
