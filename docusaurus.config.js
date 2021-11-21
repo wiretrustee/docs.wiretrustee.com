@@ -48,6 +48,7 @@ const config = {
         logo: {
           alt: 'Wiretrustee Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
           href: 'https://wiretrustee.com/',
         },
         items: [
