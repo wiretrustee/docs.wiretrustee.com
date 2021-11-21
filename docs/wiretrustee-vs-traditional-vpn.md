@@ -25,7 +25,7 @@ To achieve this, Wiretrustee client applications employ signalling servers to fi
 These are similar to the signaling servers used in [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling#the_signaling_server)
 
 Thanks to [NAT traversal techniques](https://en.wikipedia.org/wiki/NAT_traversal),
-outlined in the [Why Wireguard with Wiretrustee?](/why-wireguard-with-wiretrustee) section above,
+outlined in the [Why Wireguard with Wiretrustee](/why-wireguard-with-wiretrustee) section,
 Wiretrustee installation doesn't require complex network and firewall configuration.
 It just works, minimising the maintenance effort.
 
