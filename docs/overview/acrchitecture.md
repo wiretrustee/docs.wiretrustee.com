@@ -75,3 +75,15 @@ The Client's roles are the following:
     The remote peer does the same and once the peers can reach each other, they establish an encrypted Wireguard tunnel.
 
 ### Signal Service
+
+The Signal Service or simply Signal is a lightweight piece of software that helps peers to negotiate direct connections. 
+It does not store any data and no traffic passes through it.
+
+The only Signal's responsibility is:
+* **Serve as a notification mechanism for peers.** Before a connection can be established, peers need to find each other and exchange the most suitable connection candidates.
+  This is done through Signal. After a connection has been established, Signal steps out. The messages sent through Signal are peer-to-peer encrypted so that Signal can't decrypt them.
+  
+Wiretsutee Signal is very similar to the signaling servers used in [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling#the_signaling_server).
+
+It runs in the cloud Wiretrustee-managed and can be self-hosted.
+
