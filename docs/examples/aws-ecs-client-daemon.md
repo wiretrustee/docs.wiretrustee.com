@@ -21,7 +21,7 @@ All these options are valid and proved to work over the years, but they come wit
 * Fragile firewall configuration.
 * Yet, another server to secure and maintain.
 
-**In this example, we will run Wiretrustee client configured as a daemon set in ECS.**
+**In this example, we will run Wiretrustee client configured as a daemon set in ECS deployed with Terraform.**
 
 This allows you to:
 
