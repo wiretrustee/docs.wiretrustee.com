@@ -81,9 +81,27 @@ It does not store any data and no traffic passes through it.
 
 The only Signal's responsibility is:
 * **Serve as a notification mechanism for peers.** Before a connection can be established, peers need to find each other and exchange the most suitable connection candidates.
-  This is done through Signal. After a connection has been established, Signal steps out. The messages sent through Signal are peer-to-peer encrypted so that Signal can't decrypt them.
-  
-Wiretsutee Signal is very similar to the signaling servers used in [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling#the_signaling_server).
+  This is done through Signal. After a connection has been established, Signal steps out. Messages that are sent through Signal are peer-to-peer encrypted so that Signal can't decrypt them.
 
+<p align="center">
+    <img src="/img/architecture/signal.png" alt="signal-dia"/>
+</p>
+
+Wiretsutee Signal is very similar to the signaling servers used in [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling#the_signaling_server).
 It runs in the cloud Wiretrustee-managed and can be self-hosted.
 
+### Relay Service
+
+The Relay service is a [TURN server](https://webrtc.org/getting-started/turn-server) in WebRTC terminology.
+In fact, we use an open-source implementation called [Coturn](https://github.com/coturn/coturn).
+The purpose of this service is to be a "plan B" and relay traffic between peers in case a peer-to-peer connection isn't possible.
+
+Similarly to the Signal Service, traffic that flows through the Relay can't be decrypted due to the same Wireguard peer-to-peer encryption.
+
+<p align="center">
+    <img src="/img/architecture/relay.png" alt="relay-dia"/>
+</p>
+
+It runs in the cloud or can be self-hosted.
+
+### STUN (NAT Traversal)
