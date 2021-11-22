@@ -1,7 +1,7 @@
 ---
 id: wiretrustee-vs-traditional-vpn
 title: Wiretrustee vs. Traditional VPN
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Wiretrustee vs. Traditional VPN
