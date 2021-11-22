@@ -10,45 +10,46 @@ Wiretrustee is an open source platform consisting of a collection of components,
 It uses open-source technologies like [WireGuard®](https://www.wireguard.com/), [Pion ICE (WebRTC)](https://github.com/pion/ice), [Coturn](https://github.com/coturn/coturn),
 and [software](https://github.com/wiretrustee/wiretrustee) developed by Wiretrustee authors to make secure private networks deployment and management simple.
 
-Wiretrustee relies on four components - **Client** (or agent), **Management**, **Signal** and **Relay** services.
+Wiretrustee relies on four components - **Client** application (or agent), **Management**, **Signal** and **Relay** services.
 
-The combination of these elements ensures that a direct point-to-point connections are established and only authenticated users (or machines) have access to the resources for which they are authorized.
+The combination of these elements ensures that direct point-to-point connections are established and only authenticated users (or machines) have access to the resources for which they are authorized.
 
 A **Peer** is a machine or any device that is connected to the network. 
-It can be a Linux server running in the cloud or on-premises, a personal laptop, or even your Raspberry PI.  
+It can be a Linux server running in the cloud or on-premises, a personal laptop, or even a Raspberry PI.  
 
 <p align="center">
     <img src="/img/architecture/high-level-dia.png" alt="high-level-dia" width="781"/>
 </p>
 
-With Wiretrustee clients installed and authorized on the Management service, your machines form a mesh network connecting to each other directly via an encrypted point-to-point Wireguard tunnel.
+With Wiretrustee clients installed and authorized on the Management service, machines form a mesh network connecting to each other directly via an encrypted point-to-point Wireguard tunnel.
 
 <p align="center">
     <img src="/img/architecture/mesh.png" alt="high-level-dia"/>
 </p>
 
-While it is possible to create a full mesh network, it might be not a desirable outcome. In this case, ACLs can be utilized to limit the access to certain machines.
+While it is possible to create a full mesh network, it might be not a desirable outcome. In this case, [ACLs](/overview/acls) can be utilized to limit the access to certain machines.
 
 Let's now take a closer look at each of Wiretrustee's components.
 
 ### Management Service
 
 The Management service is the central coordination component for Wiretrustee with a UI dashboard.
-It keeps the network state, public Wireguard keys of the peers, authenticates, and distributes network changes to peers.
+It keeps the network state, public Wireguard keys of the peers, authenticates and distributes network changes to peers.
 
 The Management Service's responsibilities include:
 
 * **Registering and authenticating new peers.**  Every new machine has to register itself in the network in order to connect to other machines. 
-    After installation, Wiretrustee client requires login that can be done through Identity Provider (IDP) or with a setup key.
+    After installation, Wiretrustee client requires login that can be done through Identity Provider (IDP) or with a [setup key](/overview/setup-keys).
 * **Keeping the network map.** The Management service stores information about all the registered peers including Wireguard public key that was sent during the registration process.    
 * **Managing private IP addresses.** Each peer receives a unique private IP with which it can be identified in the network. 
   We use [Carrier Grade NAT](https://en.wikipedia.org/wiki/Carrier-grade_NAT) address space with an allocated address block <em>100.64.0.0/10</em>.
 * **Synchronizing network changes to peers.** The Management Service keeps a control channel open to each peer sending network updates. 
     Whenever a new peer joins the network, all other peers that are authorized to connect to it receive an update. 
-    After that they are able to establish a connection to the new peer.
-* **Creating and managing ACLs.** ACLs is a list of peers that given peer have access to.  <em>Coming Soon</em>.
-* **Managing private DNS.** DNS allows referring to each of the peers with a fully qualified domain name (FQDN). <em>Coming Soon</em>.
+    After that, they are able to establish a connection to the new peer.
+* **Creating and managing ACLs.** ACL is a list of peers that a given peer has access to. <em>Coming Soon</em>.
+* **Managing private DNS.** [DNS](/overview/dns) allows referring to each of the peers with a fully qualified domain name (FQDN). <em>Coming Soon</em>.
 * **Monitoring network activity.** <em>Coming Soon</em>.
+* **Wireguard key rotation.** <em>Coming Soon</em>.
 
 The Management service runs in the cloud Wiretrustee-managed. It can also be self-hosted.
 
@@ -67,7 +68,7 @@ The Client's roles are the following:
 * **Generating private and public Wireguard keys.** These keys are used for packet encryption between peers and for [Wireguard Cryptokey Routing](https://www.wireguard.com/#cryptokey-routing).
   To accept the incoming connections, peers have to know each other, therefore, the generated public keys have to be pre-shared on the machines. The client application sends its public key to the Management service which then distributes it to the authorized peers.
   The private key never leaves the machine, ensuring that only the machine that owns the key can decrypt traffic addressed to it.
-* **Handling peer registration and authentication.**  Each peer has to be authenticated and registered in the system. The client application requests a user to login with an Identity Provider (IDP) or provides a [setup key](/overview/setup-keys) so that the peer can be associated with the organization's account.
+* **Handling peer registration and authentication.**  Each peer has to be authenticated and registered in the system. The client application requests a user to log in with an Identity Provider (IDP) or a [setup key](/overview/setup-keys) so that the peer can be associated with the organization's account.
 * **Receiving network updates from the Management service.**
   Each peer receives initial configuration and a list of peers with corresponding public keys and IP addresses so that it can establish a peer-to-peer connection.
 * **Establishing peer-to-peer Wireguard connection.** To establish a connection with a remote peer, the Client first discovers the most suitable connection candidate, or simply address (IP:port) that other peer can use to connect to it. 
