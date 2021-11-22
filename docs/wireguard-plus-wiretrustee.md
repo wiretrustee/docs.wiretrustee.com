@@ -1,7 +1,7 @@
 ---
 id: wireguard-plus-wiretrustee
 title: Why Wireguard with Wiretrustee?
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 WireGuard is a modern and extremely fast VPN tunnel utilizing state-of-the-art [cryptography](https://www.wireguard.com/protocol/)
