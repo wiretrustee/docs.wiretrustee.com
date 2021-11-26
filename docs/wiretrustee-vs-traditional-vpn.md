@@ -6,6 +6,7 @@ sidebar_position: 5
 
 # Wiretrustee vs. Traditional VPN
 
+### Traditional VPN challenges
 In the traditional VPN model, everything converges on a centralized, protected network where all the clients are connecting to a central VPN server.
 
 An increasing amount of connections can easily overload the VPN server.
@@ -18,6 +19,8 @@ Configuring firewalls, setting up NATs, SSO integration, and managing access con
 
 Traditional centralized VPNs are often compared to a [castle-and-moat](https://en.wikipedia.org/wiki/Moat) model
 in which once accessed, user is trusted and can access critical infrastructure and resources without any restrictions.
+
+### Wiretrustee benefits
 
 Wiretrustee decentralizes networks using direct point-to-point connections, as opposed to traditional models.
 Consequently, network performance is increased since traffic flows directly between the machines bypassing VPN servers or gateways.
