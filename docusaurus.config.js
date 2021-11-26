@@ -73,9 +73,9 @@ const config = {
         id: 'announcementBar-1',
         content:
             '⭐ If you like Wiretrustee, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/wiretrustee/wiretrustee">GitHub</a></a>',
-        backgroundColor: '#fafbfc',
+        backgroundColor: '#e3e3e3',
         textColor: '#091E42',
-        isCloseable: false,
+        isCloseable: true,
       },
     }),
 };
