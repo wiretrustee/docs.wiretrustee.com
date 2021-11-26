@@ -69,6 +69,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      announcementBar: {
+        id: 'announcementBar-1',
+        content:
+            '⭐ If you like Wiretrustee, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/wiretrustee/wiretrustee">GitHub</a></a>',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: false,
+      },
     }),
 };
 
