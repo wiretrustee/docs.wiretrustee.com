@@ -99,7 +99,7 @@ The only Signal's responsibility is:
 
 :::
 
-Wiretsutee Signal is very similar to the signaling servers used in [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling#the_signaling_server).
+Wiretrustee Signal is very similar to the signaling servers used in [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling#the_signaling_server).
 It runs in the cloud Wiretrustee-managed and can be self-hosted.
 
 ### Relay Service
